@@ -1,6 +1,6 @@
 from abc import ABC
 
-class Material(object):
+class Material(ABC):
 
     def __init__(self, titulo, editorial, ano, disponible):
         self.titulo = titulo
@@ -28,5 +28,32 @@ class Revista(Material):
         
         
 a = Libro("La sirenita","Pececitos", "1999", True, "Cosme fulanito", "infantil", "465468468")
-print(a)
+#print(a)
+
+class Socio(object):
+
+    def __init__(self, dni, nombre, apellido, id_socio):
+        self.dni = dni
+        self.nombre = nombre
+        self.apellido = apellido
+        self.id = id_socio
+
+    def __str__(self):
+        return f"ID: {self.id}, Nombre: {self.nombre} Apellido: {self.apellido}, DNI: {self.dni}"
+    
+b = Socio("42123456", "Agustina", "Herrera",3)
+#print(b)
         
+class Prestamo(object):
+
+    def __init__(self, id_prestamo, fecha_prestamo, socio, material, devolucion):
+        self.id = id_prestamo
+        self.fecha_prestamo = fecha_prestamo
+        self.socio = socio
+        self.material = material
+        self.devolucion = devolucion
+    def __str__(self):
+        return f"Prestamo N° {self.id} {self.socio} {self.material}" 
+    
+p = Prestamo(1, "07/06/2026", b, a, False)
+print(p)
