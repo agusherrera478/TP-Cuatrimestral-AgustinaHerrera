@@ -2,32 +2,32 @@ from abc import ABC
 
 class Material(ABC):
 
-    def __init__(self, titulo, editorial, ano, disponible):
+    def __init__(self, titulo, editorial, ano):
         self.titulo = titulo
         self.editorial = editorial
         self.ano = ano 
-        self.disponible = disponible
+        self.disponible = True
 
    
     def __str__(self):
-        return f"Titulo: {self.titulo}, Editorial: {self.editorial}, Ano: {self.ano}, {self.disponible}"
+        return f"Titulo: {self.titulo}, Editorial: {self.editorial}, Ano: {self.ano}"
         
         
 class Libro(Material):
-    def __init__(self, titulo, editorial, ano, disponible, autor, genero, id_libro):
-        super().__init__(titulo, editorial, ano, disponible)
+    def __init__(self, titulo, editorial, ano, autor, genero, id_libro):
+        super().__init__(titulo, editorial, ano)
         self.autor = autor
         self.genero = genero
         self.id = id_libro
         
 class Revista(Material):
-    def __init__(self, titulo, editorial, ano, disponible, numero, fecha):
-        super().__init__(titulo, editorial, ano, disponible)
+    def __init__(self, titulo, editorial, ano, numero, fecha):
+        super().__init__(titulo, editorial, ano)
         self.numero = numero
         self.fecha = fecha
         
         
-a = Libro("La sirenita","Pececitos", "1999", True, "Cosme fulanito", "infantil", "465468468")
+a = Libro("La sirenita","Pececitos", "1999", "Cosme fulanito", "infantil", "465468468")
 #print(a)
 
 class Socio(object):
