@@ -8,7 +8,6 @@ class Material(ABC):
         self.ano = ano 
         self.disponible = True
 
-   
     def __str__(self):
         return f"Titulo: {self.titulo}, Editorial: {self.editorial}, Ano: {self.ano}"
         
