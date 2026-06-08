@@ -55,4 +55,4 @@ class Prestamo(object):
         return f"Prestamo N° {self.id} {self.socio} {self.material}" 
     
 p = Prestamo(1, "07/06/2026", b, a, False)
-print(p)
+#print(p)
