@@ -20,4 +20,3 @@ class Material(ABC):
 
     def __str__(self):
         return f"Titulo: {self.titulo}, Editorial: {self.editorial}, Ano: {self.ano}"        
-
