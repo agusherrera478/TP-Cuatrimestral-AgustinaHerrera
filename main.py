@@ -1,5 +1,5 @@
 from clases.libro import Libro
-from clases.revista import Revista
+from clases.revista import Revista 
 from clases.socio import Socio
 from clases.prestamo import Prestamo
 
@@ -9,4 +9,5 @@ b = Socio("42123456", "Agustina", "Herrera",3)
 
 p = Prestamo(1, "07/06/2026", b, a, False)
 
-print(p)
+R = Revista("Casi angeles", "Ataltida", 2007, 10, " Marzo")
+print(R)
