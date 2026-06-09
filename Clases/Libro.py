@@ -6,3 +6,9 @@ class Libro(Material):
         self.autor = autor
         self.genero = genero
         self.id = id_libro
+
+    def tipo_material(self):
+        return "Libro"
+    
+    def __str__(self):
+        return f"{super().__str__()}, Autor: {self.autor}, Genero: {self.genero}, ID: {self.id}" 

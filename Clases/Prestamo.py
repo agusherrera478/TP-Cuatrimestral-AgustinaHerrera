@@ -6,5 +6,7 @@ class Prestamo(object):
         self.socio = socio
         self.material = material
         self.devolucion = devolucion
+
     def __str__(self):
+        estado = "Devuelto" if self.devolucion else "Activo"
         return f"Prestamo N° {self.id} {self.socio} {self.material}" 
