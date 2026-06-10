@@ -26,39 +26,28 @@ class Biblioteca:
         return None
 
     def registrar_prestamo(self, socio, material, fecha):
-
         if material.disponible:
-
-            prestamo = Prestamo(
-                len(self.prestamos) + 1,
-                fecha,
-                socio,
-                material,
-                False
-            )
-
+            prestamo = Prestamo(len(self.prestamos) + 1, fecha, socio, material, False)
             self.prestamos.append(prestamo)
-
             material.marcar_prestado()
 
             return prestamo
-
         else:
             print(f"Material {material.titulo} no disponible para préstamo")
+            
             return None
 
     def registrar_devolucion(self, prestamo):
 
         if not prestamo.devolucion:
-
             prestamo.devolucion = True
-
             prestamo.material.marcar_devuelto()
 
             return prestamo
 
         else:
             print("El préstamo ya fue devuelto.")
+
             return None
 
     def prestamos_activos(self):
